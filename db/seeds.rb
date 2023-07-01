@@ -13,8 +13,8 @@ puts 'Done!'
 puts 'Seeding 10 random articles...'
 10.times do
   article = Article.create!(
-    title: Faker::Book.title,
-    content: Faker::Book.author
+    title: Faker::Book.author,
+    content: Faker::Quote.most_interesting_man_in_the_world
   )
   puts "#{article.title} has been generated"
 end
