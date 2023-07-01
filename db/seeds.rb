@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+puts 'Destroying existing entries...'
+Article.destroy_all
+puts 'Done!'
+
+puts 'Seeding 10 random articles...'
+10.times do
+  article = Article.create!(
+    title: Faker::Book.title,
+    content: Faker::Book.author
+  )
+  puts "#{article.title} has been generated"
+end
+puts 'Done!'
